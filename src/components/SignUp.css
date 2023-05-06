@@ -1,0 +1,52 @@
+.signUp{
+    height: 820px;
+    background-image: url('../img/gradient-background-instagram-free-vector.jpg');
+    background-size: cover;
+    flex: 1;
+   
+}
+
+.form-content{
+    /* background-color: rgb(255, 255, 255); */
+    padding: 225px 0px;
+   
+}
+
+.form{
+    background-color: aliceblue;
+    padding: 50px 0px;
+    width: 500px;
+}
+
+.loginPara{
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+input{
+    padding: 5px;
+    outline: none;
+    margin: 3px 0px;
+    font-size: 16px;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+#submit-btn{
+    background-color: #1773ea;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.form2{
+    background-color: white;
+    padding: 30px;
+    width: 440px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
