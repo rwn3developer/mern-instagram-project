@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const data = require('./data');
 
-app.use(cors());
+app.use(cors()); //
 
 app.get('/',(req,res)=>{
     return res.json(data);
