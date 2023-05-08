@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 const SignUp = () => {
 
     const fetchData = async() => {
-        const response = await fetch("http://localhost:9000/");
+        const response = await fetch("http://localhost:9000/"); //data fetch
         const data = await response.json();
         console.log(data);
     }
