@@ -4,11 +4,15 @@ const port = 9000;
 
 const app = express();
 
+const db = require('./config/mongoose');
+
 const cors = require('cors');
 
-const data = require('./data');
+const UserModel = require('./models/UserModel');
 
 app.use(cors()); //
+
+
 
 app.get('/',(req,res)=>{
     return res.json(data);
