@@ -8,15 +8,14 @@ const db = require('./config/mongoose');
 
 const cors = require('cors');
 
-const UserModel = require('./models/UserModel');
+
 
 app.use(cors()); //
 
+app.use(express.json());
 
+app.use('/',require('./router/auth'));
 
-app.get('/',(req,res)=>{
-    return res.json(data);
-})
 
 app.listen(port,(err)=>{
     if(err){
