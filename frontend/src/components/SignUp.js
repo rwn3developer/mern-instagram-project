@@ -9,7 +9,7 @@ const SignUp = () => {
     const [userName,setUserName] = useState("");
     const [password,setPassword] = useState("");
 
-    //toast notyfy 
+    //toast notyfy functionality
     const notifyA = (msg) => toast.error(msg);
     const notifyB = (msg) => toast.success(msg);
 
