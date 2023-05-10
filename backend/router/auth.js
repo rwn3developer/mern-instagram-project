@@ -19,6 +19,7 @@ routes.post('/signup',(req,res)=>{
         return res.status(422).json({"status" : 0,"messege" : "please add all the fields"});
     }
 
+    //email or username duplicate entry not allowed
     UserModel.findOne({ $or : [{email : email},{username : username}] })
     .then((users)=>{
         if(users){
