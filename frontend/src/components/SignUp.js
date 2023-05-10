@@ -1,12 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 const SignUp = () => {
-
+    const navigate = useNavigate();
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [userName,setUserName] = useState("");
     const [password,setPassword] = useState("");
+
+    //toast notyfy 
+    const notifyA = (msg) => toast.error(msg);
+    const notifyB = (msg) => toast.success(msg);
+
 
     const postData = () => {
        
@@ -18,12 +24,20 @@ const SignUp = () => {
             },
             body : JSON.stringify({
                 name : name,
-                userName : userName,
+                username : userName,
                 email : email,
                 password : password
             })
         }).then(res => res.json())
-        .then(data => {console.log(data)} );
+        .then(data => {
+            if(data.error){
+                notifyA(data.error);
+            }else{
+                notifyB(data.message);
+                navigate("/signin");
+            }
+            console.log(data)
+        });
 
     }
 

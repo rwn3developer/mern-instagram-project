@@ -16,7 +16,7 @@ routes.post('/signup',(req,res)=>{
     const {name,username,email,password} = req.body;
 
     if(!name || !username || !email || !password){
-        return res.status(422).json({"status" : 0,"messege" : "please add all the fields"});
+        return res.status(422).json({error: "please add all the fields"});
     }
 
     //email or username duplicate entry not allowed
@@ -36,7 +36,7 @@ routes.post('/signup',(req,res)=>{
                 })
             
                 user.save()
-                .then(user => {res.json({"status" : "1","message" : "saved successfully"})})
+                .then(user => {res.json({message: "Register successfully"})})
                 .catch(err => console.log(err));
             })
 
