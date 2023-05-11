@@ -1,6 +1,6 @@
 import { Link,useNavigate } from 'react-router-dom';
 import './SignUp.css'
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import { toast } from 'react-toastify';
 const SignUp = () => {
     const navigate = useNavigate();
