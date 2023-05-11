@@ -13,8 +13,20 @@ const SignUp = () => {
     const notifyA = (msg) => toast.error(msg);
     const notifyB = (msg) => toast.success(msg);
 
+    
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const passRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
 
     const postData = () => {
+
+        //checking email
+        if(!emailRegex.test(email)){
+            notifyA("Invalid email");
+            return false;
+        }else if(!passRegex.test(password)){
+            notifyA("Password must contain at least 8 charecters,including at least one number and one includes both lower and uppercase letters and special characters for example #,@,?,!");
+            return false;
+        }
        
         //sending data to server
         fetch("http://localhost:9000/signup",{
@@ -71,7 +83,7 @@ const SignUp = () => {
                                 <p className="loginPara">
                                     By signing up, you agree to out Terms, <br/> privacy policy and cookie policy
                                 </p>
-                                <input type="submit" onClick={ () => postData() } id="submit-btn" value="Sign Up"/>
+                                <input type="submit" onClick={ () => postData() } id="submit-btn" value="Sign In"/>
 
                                     
                             </div>
