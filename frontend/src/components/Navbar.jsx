@@ -17,7 +17,11 @@ const Navbar = () => {
                     
                 <Link to='/profile'>
                     <li>Profile</li>
-                </Link>   
+                </Link> 
+
+                <Link to='/createPost'>
+                    <li>Crete Post</li>
+                </Link>     
                     
             </ul>
        </div>
