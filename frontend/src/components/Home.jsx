@@ -7,17 +7,17 @@ const Home = () => {
                 {/* card header  */}
                 <div className="card-header">
                     <div className="card-pic">
-                        <img width={100} src="https://images.pexels.com/photos/3775553/pexels-photo-3775553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                        <img  src="https://plus.unsplash.com/premium_photo-1669748157807-30514e416843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
                     </div>
                     <h5>jay mataji</h5>
                 </div>
                 {/* card-image */}
                 <div className="card-image">
-                    <img width={100} src="https://images.pexels.com/photos/6235052/pexels-photo-6235052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img  src="https://plus.unsplash.com/premium_photo-1669748157807-30514e416843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
                 </div>
                 {/* card-content */}
                 <div className="card-content">
-                    <span class="material-symbols-outlined">
+                    <span className="material-symbols-outlined">
                         favorite
                     </span>
                     <p>1 Like</p>
@@ -25,11 +25,13 @@ const Home = () => {
                 </div>
                 {/* add-comment */}
                 <div className="add-comment">
-                    <span class="material-symbols-outlined">
-                        sentiment_satisfied
-                    </span>
-                    <input type="text" placeholder="add a comment" />
-                    <button className="comment">Post</button>
+                    
+                        <span class="material-symbols-outlined">
+                            sentiment_satisfied
+                        </span>
+                        <input type="text" placeholder="add a comment" />
+                        <button className="comment">Post</button>
+                   
                 </div>
             </div>
         </div>
