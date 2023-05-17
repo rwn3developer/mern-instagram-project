@@ -11,4 +11,7 @@ mongoose.connection.on("error",()=>{
     console.log("not successfully connected mongo");
 })
 
-module.exports = mongoose;
+module.exports = {
+    mongoose,
+    Jwt_secret : "qwertyuiopkhgd"
+}

@@ -1,5 +1,14 @@
 import './Createpost.css';
 const Createpost = () => {
+
+    const loadfile = (event) => {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+    }
+
     return (
         <>
             <div className="createPost">
@@ -10,7 +19,8 @@ const Createpost = () => {
                 </div>
                 {/* image-priview */}
                 <div className="main-div">
-                    <input type="file" accept="image/*"/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/1160/1160358.png' id='output'/>
+                    <input type="file" accept="image/*" onChange={ (event) => loadfile(event) }/>
                 </div>
                 {/* details */}
                 <div className="details">
