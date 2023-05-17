@@ -16,7 +16,7 @@ routes.get('/',(req,res)=>{
     return res.json("jay mataji");
 })
 
-routes.get('/createPost',requireLogin,(req,res)=>{ 
+routes.get('/createPost',requireLogin,(req,res)=>{  
     console.log("hello post");
 })
 
