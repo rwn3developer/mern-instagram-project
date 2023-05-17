@@ -13,7 +13,7 @@ app.use(cors()); //
 app.use(express.json());
 
 app.use('/',require('./router/auth'));
-
+app.use(require('./router/createPost'));
 
 app.listen(port,(err)=>{
     if(err){
