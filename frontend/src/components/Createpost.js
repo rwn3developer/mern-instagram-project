@@ -24,15 +24,14 @@ const Createpost = () => {
             fetch("http://localhost:9000/createPost",{
                 method : "post",
                 headers : {
-                    "Content-Type" : "application/json",
-                    "Authorization" : 
+                    "Content-Type" : "application/json"
                 },
                 body : JSON.stringify({
                     body,
                     pic : url
                 }).then(res => res.json())
                 .then(data => console.log(data))
-                .catch(err => console.log(err));
+                .catch(err => console.log(err))
             })
         }
 
