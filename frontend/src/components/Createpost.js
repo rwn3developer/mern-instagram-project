@@ -1,5 +1,40 @@
+import { useState } from 'react';
 import './Createpost.css';
 const Createpost = () => {
+
+        const [body,setBody] = useState("");
+        const [image,setImage] = useState("");
+        const [url,setUrl] = useState("");
+
+        //posting image to cloudinary
+        const postDetais = () => {
+            console.log(body,image);
+            const data = new FormData();
+            data.append('file',image);
+            data.append('upload_preset','insta-clone');
+            data.append('cloud_name','coderking');
+            fetch("https://api.cloudinary.com/v1_1/coderking/image/upload",{
+                method : "post",
+                body : data
+            }).then(res => res.json())
+            .then(data => setUrl(data.url))
+            .catch(err => console.log(err));
+
+            //saving post to mongodb
+            fetch("http://localhost:9000/createPost",{
+                method : "post",
+                headers : {
+                    "Content-Type" : "application/json",
+                    "Authorization" : 
+                },
+                body : JSON.stringify({
+                    body,
+                    pic : url
+                }).then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => console.log(err));
+            })
+        }
 
     const loadfile = (event) => {
         var output = document.getElementById('output');
@@ -15,12 +50,12 @@ const Createpost = () => {
                 {/* header */}
                 <div className="post-header">
                     <h4 style={{margin:"3px auto"}}>Create New Post</h4>
-                    <button id="post-btn">Share</button>
+                    <button id="post-btn" onClick={ ()=> postDetais() } >Share</button>
                 </div>
                 {/* image-priview */}
                 <div className="main-div">
                     <img src='https://cdn-icons-png.flaticon.com/512/1160/1160358.png' id='output'/>
-                    <input type="file" accept="image/*" onChange={ (event) => loadfile(event) }/>
+                    <input type="file" accept="image/*" onChange={ (event) => {loadfile(event); setImage(event.target.files[0])  }}/>
                 </div>
                 {/* details */}
                 <div className="details">
@@ -30,7 +65,7 @@ const Createpost = () => {
                         </div>
                         <h5>jay mataji</h5>
                     </div>
-                    <textarea type="text" placeholder="Write a caption.....">
+                    <textarea value={body} onChange={ (e) => setBody(e.target.value) } type="text" placeholder="Write a caption.....">
                         
                     </textarea>
                 </div>
