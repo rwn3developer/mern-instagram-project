@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Createpost = () => {
 
         const [body,setBody] = useState("");
-        const [image,setImage] = useState("");
+        const [image,setImage] = useState(""); 
         const [url,setUrl] = useState("");
         const navigate = useNavigate();
 
