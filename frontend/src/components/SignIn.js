@@ -37,6 +37,7 @@ const SignIn = () => {
                 notifyA(data.error);
             }else{
                 notifyB(data.message);
+                localStorage.setItem('jwt',data.token);
                 navigate("/");
             }
             console.log(data)

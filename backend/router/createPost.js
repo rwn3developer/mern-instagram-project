@@ -8,14 +8,14 @@ const requireLogin = require('../middlewares/requireLogin');
 const POST = require('../models/post');
 
 routes.post('/createPost',requireLogin,(req,res)=>{
-    const {title,body} = req.body;
+    const {body,pic} = req.body;
 
-    if(!title || !body){
+    if(!body || !pic){
         return res.status(402).json({error : "please add all the fields"})
     }
     const post =  new POST({
-        title,
         body,
+        photo : pic,
         postedBy : req.user
     })
     post.save().then((result)=>{
