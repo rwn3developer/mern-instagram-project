@@ -10,9 +10,10 @@ const Createpost = () => {
         const [url,setUrl] = useState("");
         const navigate = useNavigate();
 
-        //toast notyfy functionality
+        //toast notyfy functionality start
         const notifyA = (msg) => toast.error(msg);
         const notifyB = (msg) => toast.success(msg);
+        //toast notyfy functionality end
 
         useEffect(()=>{
             if(url){
