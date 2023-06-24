@@ -7,6 +7,8 @@ const requireLogin = require('../middlewares/requireLogin');
 
 const POST = require('../models/post');
 
+
+//create post
 routes.post('/createPost',requireLogin,(req,res)=>{
     const {body,pic} = req.body;
 
