@@ -7,6 +7,12 @@ const requireLogin = require('../middlewares/requireLogin');
 
 const POST = require('../models/post');
 
+routes.get('/allposts',requireLogin,(req,res)=>{
+    POST.find()
+    .populate("postedBy","_id name")
+    .then(posts => res.json(posts))
+    .catch(err => console.log(err));
+});
 
 //create post 
 routes.post('/createPost',requireLogin,(req,res)=>{

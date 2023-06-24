@@ -50,7 +50,7 @@ const Createpost = () => {
                 method : "post",
                 body : data
             }).then(res => res.json())
-            .then(data =>  setUrl(data.url),console.log(data))
+            .then(data =>  setUrl(data.url))
             .catch(err => console.log(err));  
         }
 

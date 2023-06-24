@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import { useContext } from "react";
+import { LoginContext } from "../context/loginContext";
 
 
 const SignIn = () => {
+
+    const {setUserLogin} = useContext(LoginContext);
+
     const navigate = useNavigate();
     const [email,setEmail] = useState();
     const [password,setPassword] = useState();
@@ -36,8 +41,9 @@ const SignIn = () => {
             if(data.error){
                 notifyA(data.error);
             }else{
-                notifyB(data.message);
+                notifyB("Signed In Successfully");
                 localStorage.setItem('jwt',data.token);
+                setUserLogin(true);
                 navigate("/");
             }
             console.log(data)
